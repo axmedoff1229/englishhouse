@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="uz-Cyrl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>English House — сизга хабар бор!</title>
+<meta name="theme-color" content="#1A6BFF">
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:linear-gradient(180deg,#EAF1FF 0%,#fff 55%);color:#111;display:flex;justify-content:center}
+.w{width:100%;max-width:520px;padding:22px 20px 34px;text-align:center}
+.logo{font-size:34px;font-weight:900;letter-spacing:-.03em}.logo b{color:#1A6BFF}.logo i{color:#FF2A2A;font-style:normal}
+.card{margin:22px 0 18px;background:#fff;border:3px solid #1A6BFF;border-radius:28px;padding:30px 22px;box-shadow:0 10px 30px rgba(26,107,255,.15)}
+.em{font-size:64px;line-height:1}
+.msg{font-size:27px;font-weight:900;line-height:1.25;margin:14px 0 4px}
+.more{margin-top:16px;border:0;background:#F2F5FA;color:#1A6BFF;font-weight:800;font-size:16px;border-radius:999px;padding:11px 20px}
+.offer{display:inline-block;background:#1A6BFF;color:#fff;font-weight:900;font-size:22px;border-radius:999px;padding:12px 24px;margin:6px 0 16px;box-shadow:0 0 0 5px #fff,0 0 0 8px #1A6BFF}
+.b{display:block;text-decoration:none;font-weight:900;font-size:23px;border-radius:20px;padding:18px;margin:12px 0}
+.call{background:#E3342B;color:#fff}.sms{background:#111;color:#fff}.map{background:#F2F5FA;color:#111;font-size:17px;font-weight:800}
+.num{font-size:34px;font-weight:900;margin:8px 0 2px;letter-spacing:0}
+.sm{font-size:15px;color:#4A5568;font-weight:700;line-height:1.4}
+</style></head><body><div class="w">
+<div class="logo"><b>English</b> <i>House</i></div>
+<div class="card"><div class="em" id="e">😄</div><div class="msg" id="m"></div><button class="more" id="n">Яна бир комплимент ➜</button></div>
+<div class="offer">★ 3 та дарс — БЕПУЛ!</div>
+<div class="sm">Инглиз · Рус · Немис · Корейс тили · Кимё · Биология · Тарих</div>
+<a class="b call" href="tel:+998930696699">📞 Қўнғироқ қилиш</a>
+<a class="b sms" id="s" href="sms:+998930696699">💬 SMS ёзиш</a>
+<div class="num">93 069 66 99</div>
+<div class="sm">Қўрғонтепа · Миллий банк ёнида,<br>3 қаватли бинонинг 2-қавати</div>
+</div>
+<script>
+var C=[["😄", "Сиз жуда ақллисиз — ахир бу плакатни сканерладингиз-ку!"], ["😏", "«Сканерламанг» дедик-ку… Лекин сиз барибир сканерладингиз. Мана шу — характер!"], ["🧠", "Мия — энг яхши мускул. Бугун уни бироз машқ қилдирамизми?"], ["😂", "Кечагина «эртага бошлайман» дегандингиз. Мана, эртага келди!"], ["🐢", "Тошбақа ҳам охири манзилга етади. Сиз-чи? Фақат ўрнингиздан туринг."], ["📱", "Телефонда 5 соат, китобда 5 дақиқа… Бугун ҳисобни тенглаштирамиз-а?"], ["☕", "Чой совимасдан бошланган иш охирига етади. Чой ҳали иссиқ!"], ["😎", "Инглиз тилини билсангиз, мемларни ҳам асл тилида тушунасиз."], ["🚀", "Катта ишлар кичик қадамдан бошланади. Биринчи қадам — қўнғироқ."], ["💪", "Ўрганишга ҳеч қачон кеч эмас. Бугун — сизнинг энг ёш кунингиз!"], ["🌟", "Сиз ўзгачасиз. Буни ҳеч қачон унутманг."], ["🍀", "Бугун — сизнинг кунингиз! Ҳаммаси яхши бўлади."], ["✨", "Сизда катта келажак бор — фақат бошланг."], ["🌈", "Орзуларингиз рўёбга чиқади — бугундан бошланг."], ["❤️", "Ота-онангиз сиз билан фахрланади."], ["😊", "Сизнинг табассумингиз бугун кимнидир хурсанд қилади."], ["🎯", "Мақсад қўйган одам яримига етган. Қолган ярмига биз ёрдам берамиз."], ["🤓", "Билим — ҳеч ким ўғирлай олмайдиган бойлик."], ["🍕", "Пицца 25 дақиқада тайёр бўлади. Билим — бироз узоқроқ, лекин қорин емас, келажак тўйдиради!"], ["🎮", "Ҳаётда ҳам «level up» бор. Лекин у ўйин олдида эмас, билим орқали очилади."], ["🦸", "Ҳар бир супер қаҳрамоннинг ҳам бир кун бошланиши бўлган. Сизники — бугун."], ["🔥", "Эринчоқлик 5 дақиқа гапиради, натижа эса умр бўйи гапиради."], ["📚", "Бугун ўқиган бир саҳифа — эртанги катта имконият."], ["🧗", "Тоғнинг чўққисига ҳам биринчи қадам билан чиқилади."], ["🏆", "Ғолиблар бошқача туғилмаган — улар бугун бошлаганлар."], ["🤝", "Тил билган одам дунёнинг ярми билан дўст бўла олади."], ["🌍", "3 та тил билсангиз — 3 та дунё очилади."], ["⏰", "Соат тиқ-тиқ қилаяпти. Қўнғироқ қилиш учун эса 10 сония кифоя!"], ["😅", "Қўшнининг боласи ҳам ўқияпти. Лекин сиз кўпроқ ўқийсиз-ку!"], ["🧃", "Ширин нарса жуда кўп. Лекин энг ширини — ўз билимингиздан фахрланиш."], ["🦉", "Бойқуш тунда ўйлайди, сиз эса бугун бошлайсиз."], ["🎁", "Сизга совға: 3 та бепул синов дарси. Олиб қўйинг!"], ["🎈", "Бугун кимдир сизни ўйлаб табассум қилди. Сиз ҳам ўзингизга табассум қилинг."], ["🧩", "Ҳаёт — жумбоқ. Билим эса унинг энг керакли бўлаги."], ["🌱", "Ҳар куни озгина ўрганган одам бир йилда катта дарахтга айланади."], ["🏃", "Югуриш шарт эмас — фақат тўхтамаслик етарли."], ["🎤", "Бир кун чет тилда сўзлашасиз ва айтасиз: «Ўшанда бошлаганим яхши бўлди»."], ["😴", "Диванингиз сизни қўйиб юбормайди. Лекин биз қўнғироқ қилишга ундаймиз!"], ["🥇", "Бугунги кичик ғалаба — эртанги катта ютуқнинг уруғи."], ["🛫", "Келажакка чипта олдингиз: у яқин жойда, 3 та дарс бепул."], ["🐱", "Мушук ҳам ўйнайди, ҳам ухлайди. Сиз эса ўйнаб ҳам ўрганишингиз мумкин!"]];
+var N=C.length,i=Math.floor(Math.random()*N);try{var l=parseInt(localStorage.getItem("eh_last"),10);if(l===i)i=(i+1+Math.floor(Math.random()*(N-1)))%N;localStorage.setItem("eh_last",i)}catch(e){}
+function show(){document.getElementById('e').textContent=C[i][0];document.getElementById('m').textContent=C[i][1];
+document.getElementById('s').href='sms:+998930696699?&body='+encodeURIComponent('Салом! 3 та бепул синов дарсига ёзилмоқчиман.');}
+document.getElementById('n').onclick=function(){var j=i;while(j===i)j=Math.floor(Math.random()*N);i=j;show()};show();
+</script></body></html>
