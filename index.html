@@ -1,36 +1,207 @@
 <!doctype html>
-<html lang="uz-Cyrl"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>English House — сизга хабар бор!</title>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>English House — sizga maxfiy xabar bor</title>
+<meta name="description" content="English House, Qo‘rg‘ontepa. 3 ta bepul sinov darsi.">
 <meta name="theme-color" content="#1A6BFF">
 <style>
+:root{--blue:#1A6BFF;--deep:#0B3BB5;--red:#FF2A2A;--ink:#0F1F3D;--soft:#EAF1FF;--paper:#FFFDF8;
+--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{margin:0;min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:linear-gradient(180deg,#EAF1FF 0%,#fff 55%);color:#111;display:flex;justify-content:center}
-.w{width:100%;max-width:520px;padding:22px 20px 34px;text-align:center}
-.logo{font-size:34px;font-weight:900;letter-spacing:-.03em}.logo b{color:#1A6BFF}.logo i{color:#FF2A2A;font-style:normal}
-.card{margin:22px 0 18px;background:#fff;border:3px solid #1A6BFF;border-radius:28px;padding:30px 22px;box-shadow:0 10px 30px rgba(26,107,255,.15)}
-.em{font-size:64px;line-height:1}
-.msg{font-size:27px;font-weight:900;line-height:1.25;margin:14px 0 4px}
-.more{margin-top:16px;border:0;background:#F2F5FA;color:#1A6BFF;font-weight:800;font-size:16px;border-radius:999px;padding:11px 20px}
-.offer{display:inline-block;background:#1A6BFF;color:#fff;font-weight:900;font-size:22px;border-radius:999px;padding:12px 24px;margin:6px 0 16px;box-shadow:0 0 0 5px #fff,0 0 0 8px #1A6BFF}
-.b{display:block;text-decoration:none;font-weight:900;font-size:23px;border-radius:20px;padding:18px;margin:12px 0}
-.call{background:#E3342B;color:#fff}.sms{background:#111;color:#fff}.map{background:#F2F5FA;color:#111;font-size:17px;font-weight:800}
-.num{font-size:34px;font-weight:900;margin:8px 0 2px;letter-spacing:0}
-.sm{font-size:15px;color:#4A5568;font-weight:700;line-height:1.4}
-</style></head><body><div class="w">
-<div class="logo"><b>English</b> <i>House</i></div>
-<div class="card"><div class="em" id="e">😄</div><div class="msg" id="m"></div><button class="more" id="n">Яна бир комплимент ➜</button></div>
-<div class="offer">★ 3 та дарс — БЕПУЛ!</div>
-<div class="sm">Инглиз · Рус · Немис · Корейс тили · Кимё · Биология · Тарих</div>
-<a class="b call" href="tel:+998930696699">📞 Қўнғироқ қилиш</a>
-<a class="b sms" id="s" href="sms:+998930696699">💬 SMS ёзиш</a>
-<div class="num">93 069 66 99</div>
-<div class="sm">Қўрғонтепа · Миллий банк ёнида,<br>3 қаватли бинонинг 2-қавати</div>
-</div>
+html{background:var(--blue)}
+body{margin:0;min-height:100vh;font-family:var(--sans);color:var(--ink);
+background:
+radial-gradient(120% 70% at 85% -10%,#4D92FF 0,transparent 60%),
+radial-gradient(90% 60% at -10% 40%,var(--deep) 0,transparent 65%),
+var(--blue);
+background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;
+background-image:radial-gradient(#fff 1.2px,transparent 1.3px);background-size:22px 22px;
+-webkit-mask-image:linear-gradient(180deg,#000,transparent 70%);mask-image:linear-gradient(180deg,#000,transparent 70%)}
+.wrap{position:relative;max-width:480px;margin:0 auto;padding:max(22px,env(safe-area-inset-top)) 20px 150px}
+.logo{display:flex;justify-content:center;font-weight:900;font-size:30px;letter-spacing:-.035em;color:#fff;margin:6px 0 40px}
+.logo i{font-style:normal;color:#FFD9D9;margin-left:.28em}
+.logo i{background:var(--red);color:#fff;border-radius:10px;padding:0 9px;transform:rotate(-3deg)}
+
+/* note */
+.stage{position:relative;perspective:1200px;min-height:330px}
+.tape{position:absolute;left:50%;top:-14px;width:112px;height:34px;margin-left:-56px;background:rgba(255,42,42,.92);transform:rotate(-4deg);z-index:3;border-radius:3px;box-shadow:0 2px 6px rgba(0,0,0,.18)}
+.note{position:relative;background:var(--paper);border-radius:6px 6px 22px 22px;padding:44px 26px 28px;text-align:center;
+box-shadow:0 1px 0 #fff inset,0 30px 50px -22px rgba(4,20,70,.55);transform:rotate(-1.6deg)}
+.sealed h1{font-size:34px;line-height:1.08;letter-spacing:-.03em;margin:6px 0 10px;font-weight:900}
+.sealed p{margin:0 0 22px;color:#4A5568;font-size:17px;line-height:1.4}
+.big{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;border:0;cursor:pointer;font:inherit;font-weight:900;font-size:22px;color:#fff;background:var(--red);border-radius:18px;padding:18px;box-shadow:0 8px 0 #B81616;transition:transform .12s,box-shadow .12s}
+.big:active{transform:translateY(6px);box-shadow:0 2px 0 #B81616}
+.opened{display:none}
+.revealed .sealed{display:none}
+.revealed .opened{display:block;transform-origin:50% 0;animation:unfold .7s cubic-bezier(.2,.8,.2,1) both}
+@keyframes unfold{0%{transform:rotateX(-88deg);opacity:0}40%{opacity:1}100%{transform:rotateX(0)}}
+.mark{font-family:var(--serif);font-size:88px;line-height:.6;color:var(--red);height:44px;display:block;margin-bottom:6px}
+.q{font-family:var(--serif);font-size:27px;line-height:1.32;font-weight:600;margin:0;text-wrap:balance;min-height:4.8em;display:flex;align-items:center;justify-content:center}
+.row{display:flex;gap:10px;margin-top:22px}
+.ghost{flex:1;white-space:nowrap;text-align:center;text-decoration:none;cursor:pointer;font:inherit;font-weight:800;font-size:16px;color:var(--blue);background:var(--soft);border:0;border-radius:14px;padding:14px 10px}
+.ghost:active{background:#D5E3FF}
+
+/* offer + info */
+.offer{margin:46px 0 0;text-align:center;color:#fff}
+.offer .tag{display:inline-block;background:#fff;color:var(--blue);font-weight:900;font-size:30px;letter-spacing:-.02em;border-radius:20px;padding:12px 22px;transform:rotate(1.5deg);box-shadow:0 10px 24px -10px rgba(4,20,70,.6)}
+.offer .tag b{color:var(--red)}
+.offer p{margin:16px auto 0;max-width:30ch;font-size:17px;line-height:1.45;font-weight:600;opacity:.95}
+.subs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px 0 0;padding:0;list-style:none}
+.subs li{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:7px 14px;font-weight:700;font-size:15px;color:#fff}
+.info{margin-top:34px;background:#fff;border-radius:26px;padding:22px 22px 24px;text-align:center;box-shadow:0 24px 40px -24px rgba(4,20,70,.6)}
+.info .num{font-size:38px;font-weight:900;letter-spacing:.01em;line-height:1}
+.info .num a{color:var(--ink);text-decoration:none}
+.info p{margin:10px 0 0;color:#4A5568;font-weight:700;line-height:1.45;font-size:16px}
+
+/* sticky actions */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:10;padding:12px 16px max(14px,env(safe-area-inset-bottom));
+background:linear-gradient(180deg,transparent,rgba(11,59,181,.65) 35%)}
+.bar .in{max-width:480px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:8px}
+.act{display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;font-weight:900;font-size:16px;white-space:nowrap;border-radius:16px;padding:16px 6px;box-shadow:0 10px 24px -8px rgba(4,20,70,.7)}
+.call{background:var(--red);color:#fff}.sms{background:#fff;color:var(--ink)}
+.act svg{width:20px;height:20px;flex:none}
+a:focus-visible,button:focus-visible{outline:3px solid #FFD21F;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.revealed .opened{animation:none}.big{transition:none}}
+</style></head>
+<body>
+<main class="wrap" id="app">
+  <div class="logo" aria-label="English House">English<i>House</i></div>
+
+  <section class="stage" aria-live="polite">
+    <div class="tape" aria-hidden="true"></div>
+    <div class="note">
+      <div class="sealed">
+        <h1>Sizga maxfiy xabar bor</h1>
+        <p>Bu xabarni faqat siz o‘qiysiz. Ochib ko‘ring.</p>
+        <button class="big" id="open" type="button">Xabarni ochish</button>
+      </div>
+      <div class="opened">
+        <span class="mark" aria-hidden="true">“</span>
+        <blockquote class="q" id="q" style="margin:0"></blockquote>
+        <div class="row">
+          <button class="ghost" id="again" type="button">Yana bittasi</button>
+          <button class="ghost" id="share" type="button">Do‘stga yuborish</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer">
+    <span class="tag">3 ta dars — <b>BEPUL</b></span>
+    <p>Birinchi uchta sinov darsiga yozilib, o‘zingizga mos fanni tanlang.</p>
+    <ul class="subs"><li>Ingliz tili</li><li>Rus tili</li><li>Nemis tili</li><li>Koreys tili</li><li>Kimyo</li><li>Biologiya</li><li>Tarix</li><li>Mnemonika</li></ul>
+  </section>
+
+  <section class="info">
+    <div class="num"><a href="tel:+998930696699">93 069 66 99</a></div>
+    <p>Qo‘rg‘ontepa. Milliy bank yonida,<br>3 qavatli binoning 2-qavati</p>
+  </section>
+</main>
+
+<nav class="bar" aria-label="Aloqa">
+  <div class="in">
+    <a class="act call" href="tel:+998930696699"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>Qo‘ng‘iroq qilish</a>
+    <a class="act sms" id="sms" href="sms:+998930696699"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>SMS yozish</a>
+  </div>
+</nav>
+
 <script>
-var C=[["😄", "Сиз жуда ақллисиз — ахир бу плакатни сканерладингиз-ку!"], ["😏", "«Сканерламанг» дедик-ку… Лекин сиз барибир сканерладингиз. Мана шу — характер!"], ["🧠", "Мия — энг яхши мускул. Бугун уни бироз машқ қилдирамизми?"], ["😂", "Кечагина «эртага бошлайман» дегандингиз. Мана, эртага келди!"], ["🐢", "Тошбақа ҳам охири манзилга етади. Сиз-чи? Фақат ўрнингиздан туринг."], ["📱", "Телефонда 5 соат, китобда 5 дақиқа… Бугун ҳисобни тенглаштирамиз-а?"], ["☕", "Чой совимасдан бошланган иш охирига етади. Чой ҳали иссиқ!"], ["😎", "Инглиз тилини билсангиз, мемларни ҳам асл тилида тушунасиз."], ["🚀", "Катта ишлар кичик қадамдан бошланади. Биринчи қадам — қўнғироқ."], ["💪", "Ўрганишга ҳеч қачон кеч эмас. Бугун — сизнинг энг ёш кунингиз!"], ["🌟", "Сиз ўзгачасиз. Буни ҳеч қачон унутманг."], ["🍀", "Бугун — сизнинг кунингиз! Ҳаммаси яхши бўлади."], ["✨", "Сизда катта келажак бор — фақат бошланг."], ["🌈", "Орзуларингиз рўёбга чиқади — бугундан бошланг."], ["❤️", "Ота-онангиз сиз билан фахрланади."], ["😊", "Сизнинг табассумингиз бугун кимнидир хурсанд қилади."], ["🎯", "Мақсад қўйган одам яримига етган. Қолган ярмига биз ёрдам берамиз."], ["🤓", "Билим — ҳеч ким ўғирлай олмайдиган бойлик."], ["🍕", "Пицца 25 дақиқада тайёр бўлади. Билим — бироз узоқроқ, лекин қорин емас, келажак тўйдиради!"], ["🎮", "Ҳаётда ҳам «level up» бор. Лекин у ўйин олдида эмас, билим орқали очилади."], ["🦸", "Ҳар бир супер қаҳрамоннинг ҳам бир кун бошланиши бўлган. Сизники — бугун."], ["🔥", "Эринчоқлик 5 дақиқа гапиради, натижа эса умр бўйи гапиради."], ["📚", "Бугун ўқиган бир саҳифа — эртанги катта имконият."], ["🧗", "Тоғнинг чўққисига ҳам биринчи қадам билан чиқилади."], ["🏆", "Ғолиблар бошқача туғилмаган — улар бугун бошлаганлар."], ["🤝", "Тил билган одам дунёнинг ярми билан дўст бўла олади."], ["🌍", "3 та тил билсангиз — 3 та дунё очилади."], ["⏰", "Соат тиқ-тиқ қилаяпти. Қўнғироқ қилиш учун эса 10 сония кифоя!"], ["😅", "Қўшнининг боласи ҳам ўқияпти. Лекин сиз кўпроқ ўқийсиз-ку!"], ["🧃", "Ширин нарса жуда кўп. Лекин энг ширини — ўз билимингиздан фахрланиш."], ["🦉", "Бойқуш тунда ўйлайди, сиз эса бугун бошлайсиз."], ["🎁", "Сизга совға: 3 та бепул синов дарси. Олиб қўйинг!"], ["🎈", "Бугун кимдир сизни ўйлаб табассум қилди. Сиз ҳам ўзингизга табассум қилинг."], ["🧩", "Ҳаёт — жумбоқ. Билим эса унинг энг керакли бўлаги."], ["🌱", "Ҳар куни озгина ўрганган одам бир йилда катта дарахтга айланади."], ["🏃", "Югуриш шарт эмас — фақат тўхтамаслик етарли."], ["🎤", "Бир кун чет тилда сўзлашасиз ва айтасиз: «Ўшанда бошлаганим яхши бўлди»."], ["😴", "Диванингиз сизни қўйиб юбормайди. Лекин биз қўнғироқ қилишга ундаймиз!"], ["🥇", "Бугунги кичик ғалаба — эртанги катта ютуқнинг уруғи."], ["🛫", "Келажакка чипта олдингиз: у яқин жойда, 3 та дарс бепул."], ["🐱", "Мушук ҳам ўйнайди, ҳам ухлайди. Сиз эса ўйнаб ҳам ўрганишингиз мумкин!"]];
-var N=C.length,i=Math.floor(Math.random()*N);try{var l=parseInt(localStorage.getItem("eh_last"),10);if(l===i)i=(i+1+Math.floor(Math.random()*(N-1)))%N;localStorage.setItem("eh_last",i)}catch(e){}
-function show(){document.getElementById('e').textContent=C[i][0];document.getElementById('m').textContent=C[i][1];
-document.getElementById('s').href='sms:+998930696699?&body='+encodeURIComponent('Салом! 3 та бепул синов дарсига ёзилмоқчиман.');}
-document.getElementById('n').onclick=function(){var j=i;while(j===i)j=Math.floor(Math.random()*N);i=j;show()};show();
-</script></body></html>
+var Q=[
+"Sizni ko‘rganda hatto choy ham sovishga ulgurmay, shirin bo‘lib ketadi.",
+"Wi-Fi signalidan ham kuchliroq ijobiy energiyangiz bor ekan.",
+"Qayerda bo‘lmang, o‘sha joyga o‘zgacha fayz va baraka olib kirasiz.",
+"Did bilan kiyinish bo‘yicha bemalol dars o‘tsangiz bo‘lar ekan.",
+"Bugun quyosh chiqishiga hojat yo‘q edi, sizning tabassumingiz hamma yoqni yoritib yubordi.",
+"Ko‘zlaringizda butun boshli koinot yashiringandek tuyuladi.",
+"Sizga hamma rang yarashadi, lekin eng chiroylisi — yuzingizdagi tabassum.",
+"Siz bor joyda xavotirga o‘rin qolmaydi, hamma narsa nazorat ostida ekani bilinadi.",
+"Siz kirgan joyda havo ham yengillashib qoladi.",
+"Tabassumingiz uchun elektr tokidan tejab qolsa bo‘lar ekan, hamma yoq yorishib ketadi.",
+"Sizga qarab turib, “yaxshi odamlar hali ham bor ekan” degan fikr keladi.",
+"Gapingiz kofe kabi: bir marta eshitgan odam yana eshitgisi keladi.",
+"Siz kulganingizda atrofdagilarning kayfiyati ham o‘zi tuzalib qoladi.",
+"Sizdagi sabr va mehr kitoblarga yozib qo‘yishga arziydi.",
+"Siz bilan o‘tirgan odam vaqt qanday o‘tganini sezmay qoladi.",
+"Ko‘nglingiz shunchalik kengki, unga butun bir shahar sig‘adi.",
+"Siz shunday insonsizki, yoningizda turgan odam ham yaxshiroq bo‘lgisi keladi.",
+"Bugun omadingiz chopgan kun: o‘zingizga o‘xshagan odamni ko‘zgudan ko‘rdingiz.",
+"Hatto bulutlar ham sizni ko‘rib, yo‘lidan chetga o‘tib ketadi.",
+"Kayfiyatingiz internet kabi: yaxshi bo‘lsa, hamma ulanib oladi.",
+"Siz bor joyda hatto dushanba ham xuddi shanbadek ko‘rinadi.",
+"Ovozingizni eshitgan odamning ko‘ngli o‘zi yorishib ketadi.",
+"Sizdan yaxshi kayfiyat olish uchun navbatga turish kerak bo‘ladi.",
+"Siz kirib kelganda xonaga bahor kirib kelgandek bo‘ladi.",
+"Odamlar sizni uchratganda “bugun kunim chiroyli o‘tadi” deb o‘ylaydi.",
+"Fikringiz shunchalik chuqurki, uni tushunish uchun choy damlab o‘tirish kerak.",
+"Siz ishlaydigan jamoada hech qachon zerikish bo‘lmasa kerak.",
+"Qarashingizdagi mehr hech qanday so‘zsiz ham hammasini tushuntiradi.",
+"Siz shunday odamsizki, sizdan yomon gap eshitishni hech kim xohlamaydi.",
+"Kulgingiz eng yaxshi musiqadan ham yoqimliroq jaranglaydi.",
+"Sizni tanish baxt ekan, buni hamma biladi.",
+"Siz o‘zingiz bilmagan holda atrofingizdagilarga kuch berib turasiz.",
+"Sizga qarab, qiyin kunlar ham o‘tib ketishini eslab qolasiz.",
+"Siz o‘tirgan stol ham boshqa stollardan chiroyliroq bo‘lib qoladi.",
+"Bugun ko‘zgu sizga qarab “zo‘r chiqibsiz” deb turgan bo‘lsa kerak.",
+"Sizning ismingiz aytilganda hamma beixtiyor jilmayib qo‘yadi.",
+"Siz kishida “men ham yaxshiroq bo‘lishim kerak” degan istak uyg‘otasiz.",
+"Qalbingizning nuri yuzingizga ham chiqib turibdi.",
+"Sizdek odamni topish uchun ancha qidirish kerak, siz esa bugun shu yerdasiz.",
+"Siz gapirganda hamma jim bo‘lib, diqqat bilan tinglagisi keladi.",
+"Aqlingiz ham, ko‘nglingiz ham bir xil chiroyli, bu kamdan-kam uchraydi.",
+"Siz bilan bir xonada bo‘lish o‘zi bir bayram.",
+"Sizdagi tinchlik atrofingizdagilarga ham o‘tib qoladi.",
+"Siz kishi tanimaydigan joyga kirsangiz ham, bir daqiqada hammaga yaqin bo‘lib qolasiz.",
+"Sizning energiyangiz quyosh batareyasidan ham ko‘p quvvat beradi.",
+"Qadamingiz shunchalik yengilki, orqangizdan xursandchilik ergashib yuradi.",
+"Siz bor joyda eng oddiy lahza ham esda qoladigan voqeaga aylanadi.",
+"Mehnatingiz ham, mehringiz ham hech qachon yerda qolmaydi.",
+"Siz o‘zingizni bilmaysiz, lekin atrofingizdagilar sizdan ilhom oladi.",
+"Siz tushgan suratda hamma yaxshi chiqadi, chunki kayfiyatingiz yuqumli.",
+"Biror narsaga qo‘l urgan bo‘lsangiz, uning oxiri albatta chiroyli bo‘ladi.",
+"Siz bor jamoaning kayfiyati hech qachon tushmaydi.",
+"Sizning yoningizda o‘zini bemalol his qilmaydigan odam topilmasa kerak.",
+"Ko‘rinishingiz ham, fe’l-atvoringiz ham bir-biriga juda mos tushgan.",
+"Siz shunday xushmuomalasizki, hatto kechikkan avtobus ham sizni kutib turadi.",
+"Siz kuladigan joyda g‘am turolmay qochib ketadi.",
+"Sizga “rahmat” deyish uchun so‘z topish ham mashaqqat, shunchalik ko‘p yaxshilik qilasiz.",
+"Siz hayotga qanday qarasangiz, hayot ham sizga shunday chiroyli qaraydi.",
+"Eng yaxshi kunlaringiz hali oldinda, buni hozirdan sezib turibman.",
+"Bugun siz bilan bir lahza o‘tkazgan odam o‘zini omadli his qiladi."
+];
+var URL_="https://axmedoff1229.github.io/englishhouse/",i=-1,N=Q.length;
+function pick(){var j=Math.floor(Math.random()*N),l=-1;try{l=parseInt(localStorage.getItem("eh_last"),10)}catch(e){}
+ if(N>1)while(j===i||j===l)j=Math.floor(Math.random()*N);i=j;try{localStorage.setItem("eh_last",j)}catch(e){}return j}
+function show(){var j=pick(),t=Q[j];document.getElementById("q").textContent=t;
+ var o=document.querySelector(".opened");o.style.animation="none";void o.offsetWidth;o.style.animation="";}
+
+function wrap(c,t,x,y,w,lh){var ws=t.split(" "),l="",ls=[];ws.forEach(function(a){var n=l?l+" "+a:a;if(c.measureText(n).width>w&&l){ls.push(l);l=a}else l=n});ls.push(l);ls.forEach(function(r,k){c.fillText(r,x,y+k*lh)});return ls.length}
+function card(t){var W=1080,H=1350,cv=document.createElement("canvas");cv.width=W;cv.height=H;var c=cv.getContext("2d");
+ var g=c.createLinearGradient(0,0,W,H);g.addColorStop(0,"#4D92FF");g.addColorStop(.5,"#1A6BFF");g.addColorStop(1,"#0B3BB5");c.fillStyle=g;c.fillRect(0,0,W,H);
+ c.fillStyle="rgba(255,255,255,.16)";for(var a=30;a<W;a+=44)for(var b=30;b<H;b+=44){c.beginPath();c.arc(a,b,2.2,0,7);c.fill()}
+ c.save();c.translate(W/2,H/2-40);c.rotate(-.025);c.fillStyle="rgba(4,20,70,.35)";c.fillRect(-440,-380,900,800);c.fillStyle="#FFFDF8";c.fillRect(-450,-400,900,800);
+ c.fillStyle="#FF2A2A";c.save();c.translate(0,-400);c.rotate(-.07);c.fillRect(-100,-26,200,56);c.restore();
+ c.fillStyle="#FF2A2A";c.font="900 190px Georgia,serif";c.textAlign="center";c.fillText("“",0,-200);
+ c.fillStyle="#0F1F3D";var fs=70;c.font="600 "+fs+"px Georgia,'Palatino Linotype',serif";
+ while(true){c.font="600 "+fs+"px Georgia,'Palatino Linotype',serif";var n=wrap({measureText:function(s){return c.measureText(s)},fillText:function(){}},t,0,0,740,fs*1.35);if(n*fs*1.35<=400||fs<34)break;fs-=3}
+ var hh=0,ws=t.split(" "),ls=[],l="";ws.forEach(function(a){var m=l?l+" "+a:a;if(c.measureText(m).width>740&&l){ls.push(l);l=a}else l=m});ls.push(l);
+ var th=ls.length*fs*1.35,y0=-30-th/2+fs;ls.forEach(function(r,k){c.fillText(r,0,y0+k*fs*1.35)});
+ c.fillStyle="#E3E9F5";c.fillRect(-60,290,120,4);
+ c.font="800 38px -apple-system,Segoe UI,Arial,sans-serif";c.fillStyle="#1A6BFF";c.fillText("English",-70,350);c.fillStyle="#FF2A2A";c.fillText("House",70,350);
+ c.restore();
+ c.fillStyle="#fff";c.font="700 40px -apple-system,Segoe UI,Arial,sans-serif";c.textAlign="center";c.fillText("Sizga ham maxfiy xabar bor",W/2,1150);
+ c.font="600 32px -apple-system,Segoe UI,Arial,sans-serif";c.fillStyle="rgba(255,255,255,.85)";c.fillText("axmedoff1229.github.io/englishhouse",W/2,1205);return cv}
+function share(){var t=document.getElementById("q").textContent,txt="Menga shunday gap chiqdi: «"+t+"»\nSiz ham ochib ko‘ring: "+URL_;
+ var cv=card(t);cv.toBlob(function(bl){var f=null;try{f=new File([bl],"english-house.png",{type:"image/png"})}catch(e){}
+  if(f&&navigator.canShare&&navigator.canShare({files:[f]})){navigator.share({files:[f],text:txt}).catch(function(){})}
+  else if(navigator.share){navigator.share({text:txt,url:URL_}).catch(function(){})}
+  else{window.open("https://t.me/share/url?url="+encodeURIComponent(URL_)+"&text="+encodeURIComponent("Menga shunday gap chiqdi: «"+t+"»"),"_blank")}
+ },"image/png")}
+document.getElementById("share").onclick=share;
+document.getElementById("open").onclick=function(){document.getElementById("app").classList.add("revealed");show();};
+document.getElementById("again").onclick=show;
+document.getElementById("sms").href="sms:+998930696699?&body="+encodeURIComponent("Salom! 3 ta bepul sinov darsiga yozilmoqchiman.");
+</script>
+</body></html>
